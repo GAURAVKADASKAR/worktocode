@@ -15,10 +15,7 @@ body {
   flex-direction: column;
 }
 
-h1 {
-  color: #d6336c;
-  margin-bottom: 20px;
-}
+h1 { color: #d6336c; margin-bottom: 20px; }
 
 .login-container {
   background: #fff0f6;
@@ -54,12 +51,6 @@ button {
   margin-top: 10px;
   display: none;
 }
-
-.footer {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #d6336c;
-}
 </style>
 </head>
 <body>
@@ -71,7 +62,7 @@ button {
   <input type="password" id="password" placeholder="Password" />
   <br>
   <button onclick="login()">Login</button>
-  <div class="error" id="error">Try again meri rasmalai</div>
+  <div class="error" id="error">Username or Password is incorrect!</div>
 </div>
 
 <script>
@@ -81,10 +72,10 @@ function login() {
   const error = document.getElementById("error");
 
   if(user === "mine" && pass === "rasmalai") {
-    // Successful login
-    window.location.href = "index.html"; // yaha tumhare Polaroid Love Wall page ka naam daal do
+    // Successful login: store flag in localStorage
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "index.html"; // redirect to Polaroid Love Wall
   } else {
-    // Show error
     error.style.display = "block";
   }
 }

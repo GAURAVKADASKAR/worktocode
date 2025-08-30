@@ -178,6 +178,13 @@ button {
 </div>
 
 <script>
+    
+// Check login at start
+if(localStorage.getItem("loggedIn") !== "true") {
+  window.location.href = "login.html"; // redirect to login page if not logged in
+}
+
+
 const photos = [
   {src:"images/1.jpeg", front:"cute smile 😍😊", back:"Please ese hi haste raha kar na 💕🥰"},
   {src:"images/2.jpeg", front:"Sharmili 😘😳", back:"Kitni mast lagti hein sharmati hui🌹🥰"},
